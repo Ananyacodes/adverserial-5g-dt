@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Build and experiment outputs
+simulation/ns3/build/
+models/checkpoints/
+experiments/results/
+telemetry/storage/raw/
+telemetry/storage/processed/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+
+# Compiled ns-3
+simulation/ns3/build/
+simulation/ns3/scratch/*.o
+
+# Large data files
+telemetry/storage/raw/*.csv
+telemetry/storage/processed/*.csv
+experiments/results/*.pkl
+experiments/results/*/**.csv
+
+# Trained models (large)
+models/checkpoints/*.pkl
+models/checkpoints/*.h5
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+tools/docker/data/

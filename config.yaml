@@ -1,0 +1,26 @@
+seed: 42
+
+data:
+  train_rows: 600
+  test_rows: 250
+  feature_count: 6
+  anomaly_ratio: 0.1
+
+processing:
+  clip_min: -5.0
+  clip_max: 5.0
+  zscore_threshold: 3.5
+  window_size: 8
+
+models:
+  isolation_forest:
+    contamination: 0.1
+    n_estimators: 200
+  one_class_svm:
+    nu: 0.08
+    gamma: scale
+
+paths:
+  results_dir: experiments/results/phase1
+  baseline_metrics: experiments/results/phase1/baseline_metrics.json
+
