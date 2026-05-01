@@ -1,5 +1,10 @@
 seed: 42
 
+# Collector source: "mock" (synthetic) or "ns3_file" (from ns-3 CSV output)
+collector:
+  type: "ns3_file"  # Change to "mock" to use synthetic telemetry
+  ns3_log_file: "/home/ananya/ns-3/scratch/5g_baseline_telemetry.csv"
+
 data:
   train_rows: 600
   test_rows: 250
