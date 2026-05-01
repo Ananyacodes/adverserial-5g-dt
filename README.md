@@ -28,12 +28,15 @@ Commands:
 ## What Works Now
 
 - Synthetic telemetry generation via mock collector
-- **NS-3 telemetry ingestion** via CSV file or socket (new!)
+- NS-3 telemetry ingestion via CSV file or socket
 - Cleaning, normalization, and window feature extraction
 - Isolation Forest and One-Class SVM detector wrappers
-- Label flipping attack utility
-- Clipping and outlier defense utilities
-- Phase 1 baseline runner writing metrics JSON
+- Attack modules: label flipping and metric poisoning
+- Defense modules: clipping, outlier removal, and median filtering
+- Phase 1 baseline runner with metrics JSON output
+- Phase 2 attack sweep runner (`experiments.runners.run_phase2_attacks`)
+- Phase 3 RSRP threshold sweep runner (`experiments.runners.run_phase3_thresholds`)
+- Phase 4 defense stack + cost tradeoff runner (`experiments.runners.run_phase4_defenses`)
 
 ## Using NS-3 Telemetry
 
@@ -80,12 +83,29 @@ timestamp,ue_id,rsrp,latency,throughput,label
 
 ![Phase 1 baseline metrics run in Ubuntu](image.png)
 
+## Experiment Runners
+
+Run all phases from the repo root:
+
+- Phase 1 baseline:
+   - `python -m experiments.runners.run_phase1_build`
+   - Output: `experiments/results/phase1/baseline_metrics.json`
+- Phase 2 attacks:
+   - `python -m experiments.runners.run_phase2_attacks`
+   - Outputs: `experiments/results/phase2/phase2_summary.json` and per-attack CSV/JSON files
+- Phase 3 thresholds:
+   - `python -m experiments.runners.run_phase3_thresholds`
+   - Outputs: `experiments/results/phase3/rsrp_thresholds.csv` and `experiments/results/phase3/rsrp_threshold_summary.json`
+- Phase 4 defenses:
+   - `python -m experiments.runners.run_phase4_defenses`
+   - Outputs: `experiments/results/phase4/defense_stack_results.csv` and `experiments/results/phase4/phase4_summary.json`
+
 ## Next Build Steps
 
 - Expand ns-3 simulation with mobility and more realistic attack scenarios
-- Add phase 2 runner: automated attack experiments (label flipping, poisoning, injection)
-- Add phase 3 runner: measure attack perturbation thresholds
-- Add phase 4 runner: defense stacking and cost tradeoff analysis
-- Add richer model benchmarking, plotting, and statistical validation
+- Add richer model benchmarking, plotting, and statistical significance tests
+- Extend attack modules beyond current label flipping and metric poisoning baselines
+- Extend defense stacks with authentication and consistency modules
+- Add full-grid orchestration across phase 1-4 into a single pipeline runner
 - Populate Jupyter notebooks for interactive exploration and reproducibility
 - Generate paper figures and artifacts

@@ -139,6 +139,30 @@ print(df.describe())
 ```
 
 To attach proof for a real run, include the provenance JSON and proof JSON produced by `tools/verify_ns3_telemetry.py` alongside the CSV.
+
+## Phase 3 Threshold Run
+
+Run the RSRP threshold sweep after the phase 1 baseline:
+
+```bash
+python -m experiments.runners.run_phase3_thresholds
+```
+
+Outputs:
+- `experiments/results/phase3/rsrp_thresholds.csv`
+- `experiments/results/phase3/rsrp_threshold_summary.json`
+
+## Phase 4 Defense Stack Run
+
+Run the defense stacking sweep after the phase 3 threshold run:
+
+```bash
+python -m experiments.runners.run_phase4_defenses
+```
+
+Outputs:
+- `experiments/results/phase4/defense_stack_results.csv`
+- `experiments/results/phase4/phase4_summary.json`
 If you are documenting the result, add the Ubuntu terminal screenshot showing the phase 1 metrics output and mention that the run was performed in Ubuntu (WSL Ubuntu).
 
 ## Common Issues
