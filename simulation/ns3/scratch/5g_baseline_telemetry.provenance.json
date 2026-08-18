@@ -1,0 +1,10 @@
+{
+  "generator": "ns-3 scratch/5g_baseline.cc",
+  "output_csv": "scratch/5g_baseline_telemetry.csv",
+  "generated_at_unix_seconds": 1786916702,
+  "simulation_duration_seconds": 2.0,
+  "row_count": 75,
+  "benign_row_count": 60,
+  "anomaly_row_count": 15,
+  "label_schema": {"0": "benign", "1": "anomaly"}
+}

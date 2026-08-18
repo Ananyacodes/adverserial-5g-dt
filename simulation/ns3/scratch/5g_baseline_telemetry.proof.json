@@ -1,0 +1,12 @@
+{
+  "telemetry_csv": "simulation/ns3/scratch/5g_baseline_telemetry.csv",
+  "telemetry_csv_sha256": "dba4893619184ec60c77c7f59e1798d92ac422e5234bf8f88bea8ed776a4c675",
+  "row_count": 75,
+  "label_counts": {
+    "0": 60,
+    "1": 15
+  },
+  "timestamp_min": 0.0,
+  "timestamp_max": 1.9,
+  "source": "ns-3 generated telemetry"
+}
